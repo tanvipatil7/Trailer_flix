@@ -1,0 +1,440 @@
+/* =========================
+   1. GLOBAL BASE STYLES
+========================= */
+body {
+  margin: 0;
+  background-color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   2. LOGIN PAGE
+========================= */
+.login {
+  height: 100vh;
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.4) 60%,
+      rgba(0, 0, 0, 0.9) 100%
+    ),
+    url("https://assets.nflxext.com/ffe/siteui/vlv3/6a0cdd50-9db7-4a14-bef3-48e6b7f5f1f2/ea1d5c41-3a4b-4b87-90f6-5d7f82f1f32d/IN-en-20240122-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login Box */
+.login__container {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 60px;
+  width: 320px;
+  color: white;
+  border-radius: 4px;
+}
+
+/* Logo */
+.login-logo {
+  width: 160px;
+  display: block;
+  margin: 0 auto 30px auto;
+}
+
+/* Heading */
+.login__container h1 {
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+.login__container input {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 14px;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: white;
+  font-size: 14px;
+}
+
+.login__container input::placeholder {
+  color: #8c8c8c;
+}
+
+/* Button */
+.login__container button {
+  width: 100%;
+  height: 45px;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login__container button:hover {
+  background-color: #f6121d;
+}
+
+.login__container button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+/* Login Footer */
+.login__container p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #737373;
+}
+
+.login__container span {
+  color: white;
+  cursor: pointer;
+}
+
+.login__container span:hover {
+  text-decoration: underline;
+}
+
+.login__error {
+  color: #e87c03;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+
+/* =========================
+   3. HOME PAGE
+========================= */
+.home {
+  background-color: #111;
+  min-height: 100vh;
+  color: white;
+}
+
+
+/* =========================
+   4. NAVBAR
+========================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  padding: 0 40px;   /* 🔥 THIS gives breathing space */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 20px;   /* important spacing */
+}
+
+
+.navbar__logo {
+  width: 100px;
+  object-fit: contain;
+}
+
+.navbar__avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 6px;
+  object-fit: cover;
+  cursor: pointer;
+  display: block;
+}
+
+
+
+/* =========================
+   5. BANNER (HERO)
+=========================*/
+.banner {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+  color: white;
+}
+
+
+.banner__contents {
+  padding: 80px 40px;
+  max-width: 600px;
+}
+
+.banner__title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.banner__description {
+  line-height: 1.4;
+  font-size: 1rem;
+}
+
+.banner__fadeTop {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8),
+    transparent
+  );
+}
+
+.banner__fadeBottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(
+    to top,
+    #111,
+    transparent
+  );
+}
+
+
+.banner__video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120vw;
+  height: 120vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.banner__overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.4),
+    transparent
+  );
+}
+.banner__buttons {
+  margin-top: 20px;
+}
+
+.banner__button {
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 10px 25px;
+  margin-right: 10px;
+  background-color: rgba(51, 51, 51, 0.7);
+  transition: all 0.3s ease;
+}
+
+.banner__button:hover {
+  background-color: #e6e6e6;
+  color: #000;
+}
+
+.banner__button--secondary {
+  background-color: rgba(109, 109, 110, 0.7);
+}
+
+/* =========================
+   6. ROWS (MOVIE LISTS)
+========================= */
+.row {
+  margin-left: 20px;
+  color: white;
+}
+
+.row__posters {
+  display: flex;
+  gap: 25px;              /* spacing between posters */
+  padding: 15px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+.row__posters::-webkit-scrollbar {
+  display: none;
+}
+
+.row__item {
+  min-width: 150px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.row__item:hover {
+  transform: scale(1.08);
+  z-index: 5;
+}
+
+.row__poster {
+  width: 150px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.row__title {
+  margin-top: 8px;
+  font-size: 14px;
+  text-align: center;
+  color: white;
+}
+
+/* =========================
+   7. VIDEO PLAYER
+========================= */
+iframe {
+  margin-top: 20px;
+}
+
+/* ===== Movie Modal ===== */
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);  /* darker */
+  backdrop-filter: blur(6px);     /* optional cinematic blur */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;                  /* very important */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal {
+  position: relative;
+  width: 80%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  animation: scaleIn 0.3s ease-in-out
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.modal__content {
+  position: relative;
+  z-index: 2;
+  padding: 30px;
+  border-radius: 12px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.4)
+  );
+}
+
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 22px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+
+
+/* ===== search===== */
+.search__input {
+  width: 600px;
+  padding: 4px;
+  margin: 40px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 22px;
+}
+
+
+
+
+.profiles {
+  height: 100vh;
+  background-color: #111;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profiles__list {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.profile {
+  cursor: pointer;
+  text-align: center;
+}
+
+.profile img {
+  width: 120px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+}
+
+.profile:hover img {
+  border-color: white;
+}
+
+.profile p {
+  margin-top: 10px;
+}
